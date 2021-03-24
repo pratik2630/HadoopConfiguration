@@ -1,0 +1,16 @@
+
+- name: Hadoop master configuration playbook
+  import_playbook: master_play.yml
+
+- name: Hadoop slave configuration playbook
+  import_playbook: slave_play.yml
+
+- hosts: master
+  tasks:
+          - name: connection check report
+            shell: hadoop dfsadmin -report | less
+            register: hadoop_report
+          
+          - name: HDFS cluster connection report
+            debug:
+                    var: hadoop_report

@@ -1,0 +1,6 @@
+
+[master]
+<masterIP> ansible_user=root ansible_ssh_pass="<Password>" ansible_connections=ssh
+
+[slave]
+<SlaveIP> ansible_user=root ansible_ssh_pass="<Password>" ansible_connections=ssh
